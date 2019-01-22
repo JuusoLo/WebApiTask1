@@ -34,6 +34,8 @@ namespace WebApiTask1.Models
             modelBuilder.Entity<Person>(entity =>
             {
                 entity.Property(e => e.Name).IsUnicode(false);
+
+                entity.Property(e => e.Password).IsUnicode(false);
             });
 
             modelBuilder.Entity<Phone>(entity =>

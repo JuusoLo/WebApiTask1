@@ -31,6 +31,7 @@ namespace WebApiTask1.Repositories
         public List<Person> Read()
         {
             return _context.Person
+                .AsNoTracking()
                 .Include(p=>p.Phone)
                 .ToList();
         }
@@ -38,11 +39,12 @@ namespace WebApiTask1.Repositories
         public Person Read(int id)
         {
             return _context.Person
+                .AsNoTracking()
                 .Include(p=>p.Phone)
                 .FirstOrDefault(p => p.Id == id);
         }
 
-        public Person Update(int id, Person person)
+        public Person Update(Person person)
         {
             _context.Update(person);
             _context.SaveChanges();

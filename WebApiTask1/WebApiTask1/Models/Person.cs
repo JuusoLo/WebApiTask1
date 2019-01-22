@@ -16,6 +16,7 @@ namespace WebApiTask1.Models
         [StringLength(50)]
         public string Name { get; set; }
         public short? Age { get; set; }
+        public string Password { get; set; }
 
         [InverseProperty("Person")]
         public virtual ICollection<Phone> Phone { get; set; }
